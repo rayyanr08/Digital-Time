@@ -33,15 +33,15 @@ public void tick(){
 
 public void add(Time addedTime){
     second += addedTime.second;
-    carryOver();
+    carryOverAdd();
     minute+= addedTime.minute;
-    carryOver();
+    carryOverAdd();
     hour += addedTime.hour;
-    carryOver();
+    carryOverAdd();
     formatTime();
 }
 
-public void carryOver() {
+public void carryOverTick() {
     if (second == 60) {
         second = 0;
         minute++;
@@ -52,6 +52,26 @@ public void carryOver() {
                 hour = 0;
                 minute = 0;
                 second = 0;
+            }
+        }
+    }
+    else {
+        second++;
+    }
+}
+
+
+public void carryOverAdd(){
+    if (second >=60){
+        second = second - 60;
+        minute++;
+        if (minute>= 60){
+            minute = minute - 60;
+            hour++;
+            if (hour>= 24){
+                hour = hour - 24;
+
+
             }
         }
     }
