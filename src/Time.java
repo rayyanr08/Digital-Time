@@ -61,21 +61,19 @@ public void carryOverTick() {
 }
 
 
-public void carryOverAdd(){
-    if (second >=60){
-        second = second - 60;
-        minute++;
-        if (minute>= 60){
-            minute = minute - 60;
+    public void carryOverAdd() {
+        if (second >= 60) {
+            second -= 60;
+            minute++;
+        }
+        if (minute >= 60) {
+            minute -= 60;
             hour++;
-            if (hour>= 24){
-                hour = hour - 24;
-
-
-            }
+        }
+        if (hour >= 24) {
+            hour -= 24;
         }
     }
-}
 
     public String formatTime(){
         DecimalFormat hourFormat = new DecimalFormat("00");
