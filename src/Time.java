@@ -41,25 +41,6 @@ public void add(Time addedTime){
     formatTime();
 }
 
-public void carryOverTick() {
-    if (second == 60) {
-        second = 0;
-        minute++;
-        if (minute == 60) {
-            minute = 0;
-            hour++;
-            if (hour == 24) {
-                hour = 0;
-                minute = 0;
-                second = 0;
-            }
-        }
-    }
-    else {
-        second++;
-    }
-}
-
 
     public void carryOverAdd() {
         if (second >= 60) {
